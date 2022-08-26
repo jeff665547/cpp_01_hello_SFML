@@ -42,6 +42,13 @@ install(TARGETS main
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
+# Install the relocatable resource.
+set(export_dest_dir "${CMAKE_INSTALL_PREFIX}")
+install(
+    DIRECTORY resource
+    DESTINATION ${export_dest_dir}
+)
+
 # Install the binary file of the shared library (e.g. *.dll).
 if(INSTALL_DEPS)
     configure_file(
